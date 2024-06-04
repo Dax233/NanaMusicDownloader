@@ -14,7 +14,7 @@ from PIL import Image
 from eyed3.id3.frames import ImageFrame
 
 img_path = "avater.jpg" # 专辑封面路径
-url = "https://space.bilibili.com/498898366/channel/seriesdetail?sid=2507652" # 视频URL或合集页url
+url = "https://space.bilibili.com/498898366/channel/collectiondetail?sid=2626585" # 视频URL或合集页url
 cookies_file = "cookies.txt"  # cookies文件路径
 artist = 'ななひら' # 歌手信息
 album = 'ななひら翻唱集' # 专辑信息
