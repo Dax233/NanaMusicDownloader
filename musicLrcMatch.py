@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ## music-lrc-match
 ### github.com/Dax233/NanaMusicDownloader
-#### MICENCE: GPL
+#### MICENCE: AGPL
 ##### By: Dax233
 ##### 更新于2024/06/04
 ##### Special thanks to: Ravelloh

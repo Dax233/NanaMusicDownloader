@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 ## github.com/Dax233/NanaMusicDownloader
-### MICENCE: GPL
+### MICENCE: AGPL
 #### By: Dax233
 #### 更新于2024/06/04
 
 
 import os
 import eyed3
+
+splitword = ' - Cover- ' # 分割词
 
 ## 输出预设
 success = '\033[0;32m[+]\033[0m'
@@ -16,9 +18,7 @@ done = '\033[0;36m[>]\033[0m'
 separator = '\n================================\n'
 
 
-splitword = ' - Cover- ' # 分割词
 folder_path = 'output' # 指定要处理的文件夹路径
-
 # 获取指定文件夹下的所有文件
 files = os.listdir(folder_path)
 

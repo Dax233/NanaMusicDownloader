@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ## github.com/Dax233/NanaMusicDownloader
-### MICENCE: GPL
+### MICENCE: AGPL
 #### By: Dax233
 #### 更新于2024/06/04
 
