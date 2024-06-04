@@ -626,7 +626,7 @@ def writelog():
             
         
         # 处理数据
-        with open(log_file,'r',encoding='UTF-8', encoding='utf-8') as f1:
+        with open(log_file,'r',encoding='UTF-8') as f1:
             data = f1.read()
             # [setting]>>
             data = data.replace('[setting]>>','[setting]>>\n'+origin_file+'\n'+target_file+'\n'+optionlang+'\n',2)
@@ -648,7 +648,7 @@ def writelog():
             # [raw log]>>
             
         # 开始写入
-        with open(log_file,'w',encoding='UTF-8', encoding='utf-8') as f2: 
+        with open(log_file,'w',encoding='UTF-8') as f2: 
             f2.write(data)
         print(success+'日志已写入,保存于'+log_file)
     else:
