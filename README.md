@@ -1,0 +1,2 @@
+# NanaMusicDownloader
+批量下载视频转音频并编辑详细信息和找歌词功能
