@@ -1,0 +1,20 @@
+# 虚拟环境
+.venv/
+venv/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# 本机配置文件（可能包含 cookies 路径等私人信息，不要提交）
+config.toml
+
+# 下载产物与日志
+output/
+*.log
+musicinfo.log
+
+# 系统文件
+.DS_Store
