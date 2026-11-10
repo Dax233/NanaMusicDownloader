@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nana-music-downloader"
+version = "2.0.0"
+description = "批量下载 B 站音乐视频、转 MP3、写音频 tag、按分割词重写并模糊匹配歌词的命令行工具"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "AGPL-3.0-or-later" }
+authors = [{ name = "Dax233" }]
+keywords = ["bilibili", "music", "mp3", "lrc", "tag"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Operating System :: POSIX :: Linux",
+]
+# 核心包只用标准库：不装任何第三方包也能 import 并跑测试。
+# 真正写 MP3 tag 时才需要安装可选依赖 tag（eyed3）；下载视频还需要外部命令 you-get 与 ffmpeg。
+dependencies = []
+
+[project.optional-dependencies]
+tag = ["eyed3>=0.9.7"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+nana = "nana.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Dax233/NanaMusicDownloader"
+
+[tool.setuptools.packages.find]
+include = ["nana*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
