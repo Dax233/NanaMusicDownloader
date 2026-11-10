@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,12 +8,12 @@ version = "2.0.0"
 description = "批量下载 B 站音乐视频、转 MP3、写音频 tag、按分割词重写并模糊匹配歌词的命令行工具"
 readme = "README.md"
 requires-python = ">=3.11"
-license = { text = "AGPL-3.0-or-later" }
+license = "AGPL-3.0-or-later"
+license-files = ["LICENSE"]
 authors = [{ name = "Dax233" }]
 keywords = ["bilibili", "music", "mp3", "lrc", "tag"]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
     "Operating System :: POSIX :: Linux",
 ]
 # 核心包只用标准库：不装任何第三方包也能 import 并跑测试。
