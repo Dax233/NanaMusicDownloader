@@ -1,0 +1,66 @@
+# NanaMusicDownloader 配置示例
+#
+# 用法：复制本文件为 config.toml，按需修改，然后执行
+#     nana -c config.toml download
+# 未在命令行 / 配置文件中给出的项一律使用内置默认值。
+# 相对路径以「配置文件所在目录」为基准解析。
+
+[download]
+# 视频或合集页面地址（B 站实测可用，其余站点未验证）。
+url = "https://www.bilibili.com/video/BVxxxxxxxxxx"
+# 视频下载与音频输出目录。
+output_dir = "output"
+# you-get 下载得到的视频扩展名（B 站一般为 mp4）。
+video_extension = "mp4"
+# cookies 文件路径（需要登录态/大会员画质时填写；留空表示不传 cookies）。
+cookies_file = "cookies.txt"
+# 专辑封面图片路径；留空表示不写封面。
+cover_image = "avater.jpg"
+# ffmpeg 转码参数：码率、采样率、声道数。
+bitrate = "192k"
+sample_rate = 44100
+channels = 2
+# 是否保留下载的视频与弹幕文件（默认转码成功后清理）。
+keep_video = false
+# 输出目录里已有同名 MP3 时是否跳过（防重）。
+skip_existing = true
+
+[tag]
+# 写入每首 MP3 的歌手 / 专辑 / 专辑艺术家。
+artist = "ななひら"
+album = "ななひら翻唱集"
+album_artist = "ななひら"
+# 标题分割词：视频标题形如「歌名 - Cover- 歌手」，用它将歌名与歌手拆开。
+# 旧版脚本里写死的 " - Cover- " 就是它。
+split_word = " - Cover- "
+
+[lyrics]
+# 待匹配歌词的歌曲目录。
+songs_dir = "output"
+# 歌词输出目录；留空或删掉本项表示写到歌曲目录里。
+lrc_dir = "output"
+# 歌词语言：original（原文）或 translation（尽量取翻译）。
+language = "original"
+# 歌词匹配模式与 [tag].split_word 一致：先用分割词取出真正的歌名再检索。
+split_word = " - Cover- "
+# 模糊匹配相似度下限（0-100），低于该值视为匹配失败、跳过。
+similarity_threshold = 75.0
+# 每次搜索向 API 请求的候选数量。
+search_limit = 3
+# 单次 HTTP 请求超时（秒）与失败重试次数。
+timeout = 10.0
+retries = 2
+# 网易云搜索 API 列表，按顺序降级：前一个失败/无结果才用下一个。
+# 均为第三方公开镜像，可用性会变化，可自行替换。
+search_apis = [
+    "http://cloud-music.pl-fe.cn",
+    "https://music.api.ravelloh.top",
+    "https://music.api.coderace.top",
+    "https://neteaseapi.imgugu.ink",
+]
+# 歌词接口前缀，后面拼接歌曲 id。
+lyric_api = "https://music.163.com/api/song/media?id="
+# 翻译歌词接口；若为相对路径（如 /lyric?id=）则拼接搜索成功用的 API 前缀。
+translate_api = "/lyric?id="
+# 运行日志文件路径（追加写入）；留空表示不写日志。
+log_file = "musicinfo.log"
